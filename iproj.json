@@ -1,7 +1,7 @@
 {
   "description": "Query Display Mode Support (QsnQryModSup) API",
   "version": "1.0.0",
-  "repository": "",
+  "repository": "https://github.com/bpmcpherson/ibmi-qsnqrymodsup.git",
   "objlib": "&OBJLIB",
   "curlib": "&OBJLIB",
   "includePath": [
