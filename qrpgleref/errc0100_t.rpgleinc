@@ -1,0 +1,22 @@
+**FREE
+
+/if defined (errc0100_t)
+/eof
+/endif
+
+/define errc0100_t
+
+// IBM API Error Code parameter - ERRC0100 format
+// An API error code parameter is a variable-length structure that is common to most of the system APIs. 
+// The error code parameter controls how errors are returned to the program.
+
+// Use the template as follows, noting that the data structure needs to be initialized based on the template
+// dcl-ds apiError likeds(errc0100_t) inz(*likeds);
+
+dcl-ds errc0100_t qualified template;
+  bytesProvided  int(10) inz(%size(errc0100_t));
+  bytesAvailable int(10);
+  exceptionId    char(7);
+  reserved       char(1);
+  exceptionData  char(256);
+end-ds;

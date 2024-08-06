@@ -1,0 +1,35 @@
+**FREE
+
+/if defined(QsnQryModSup)
+/eof
+/endif
+
+/define QsnQryModSup
+
+// Query Display Mode Support (QsnQryModSup) queries if the display device allows a given mode.
+// Check that this DSPF screen size can be displayed on this monitor (3=24x80; 4=27x132)
+dcl-pr qsn_queryDisplayModeSupport extproc('QsnQryModSup');
+  displayMode    char(1) const; 
+  modeIndication ind; 
+  lowLevelHandle int(10) const options(*omit); 
+  errorCode      likeds(errc0100_t) options(*omit);
+end-pr;
+
+// Display Mode - Input
+// The display mode for which to query support. The possible values are:
+// 3 = 24x80 mode
+// 4 = 27x132 mode
+
+// These constants are provided to facilitate cleaner use of the API:
+dcl-c QSN_DISPLAY_MODE_3  '3';
+dcl-c QSN_DISPLAY_MODE_4  '4';
+
+// Mode Indication - Output
+// Whether the device allows the specified mode or not. The possible values are:
+// 0	Device does not support the mode
+// 1	Device supports the mode
+
+// NOTE: This API requires the use of the API Error Code Structure ERRC0100.
+// Include the data structure include file errc0100_t.rpgleinc in this file.
+
+/include 'qrpgleref/errc0100_t.rpgleinc'

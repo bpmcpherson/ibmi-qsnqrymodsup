@@ -1,0 +1,13 @@
+{
+  "description": "Query Display Mode Support (QsnQryModSup) API",
+  "version": "1.0.0",
+  "repository": "",
+  "objlib": "&OBJLIB",
+  "curlib": "&OBJLIB",
+  "includePath": [
+    "qrpgleref"
+  ],
+  "tgtCcsid": "*JOB",
+  "compileCommand": "/QOpenSys/pkgs/bin/makei compile -f {filename}",
+  "buildCommand": "/QOpenSys/pkgs/bin/makei build"
+}
